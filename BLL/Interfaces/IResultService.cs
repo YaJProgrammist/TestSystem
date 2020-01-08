@@ -4,13 +4,13 @@ using BLL.DTO;
 
 namespace BLL.Interfaces
 {
-    interface IResultService
+    public interface IResultService
     {
-        ResultDTO GetProduct(int? id);
-        IEnumerable<ResultDTO> GetProducts(Predicate<ResultDTO> predic);
-        void AddProduct(ResultDTO testDTO);
-        void UpdateProduct(ResultDTO testDTO);
-        void DeleteProduct(int? id);
+        ResultDTO GetResult(int? id);
+        IEnumerable<ResultDTO> GetResults(Predicate<ResultDTO> predic);
+        void AddResult(ResultDTO testDTO);
+        void UpdateResult(ResultDTO testDTO);
+        void DeleteResult(int? id);
         void Dispose();
     }
 }

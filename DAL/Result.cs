@@ -13,6 +13,6 @@ namespace DAL
 
         public Test Test { get; set; }
         public Student Student { get; set; }
-        public IEnumerable<Answer> Answers { get; set; }
+        public ICollection<Answer> Answers { get; set; }
     }
 }

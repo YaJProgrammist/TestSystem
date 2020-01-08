@@ -4,9 +4,10 @@ using System.Text;
 
 namespace BLL.DTO
 {
-    class StudentDTO
+    public class StudentDTO
     {
         public int Id { get; set; }
         public int Name { get; set; }
+        public ICollection<int> ResultIds { get; set; }
     }
 }

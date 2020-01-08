@@ -4,13 +4,13 @@ using BLL.DTO;
 
 namespace BLL.Interfaces
 {
-    interface ITestService
+    public interface ITestService
     {
-        TestDTO GetProduct(int? id);
-        IEnumerable<TestDTO> GetProducts(Predicate<TestDTO> predic);
-        void AddProduct(TestDTO testDTO);
-        void UpdateProduct(TestDTO testDTO);
-        void DeleteProduct(int? id);
+        TestDTO GetTest(int? id);
+        IEnumerable<TestDTO> GetTests(Predicate<TestDTO> predic);
+        void AddTest(TestDTO testDTO);
+        void UpdateTest(TestDTO testDTO);
+        void DeleteTest(int? id);
         void Dispose();
     }
 }

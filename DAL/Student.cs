@@ -8,5 +8,6 @@ namespace DAL
     {
         public int Id { get; set; }
         public int Name { get; set; }
+        public ICollection<Result> Results { get; set; }
     }
 }

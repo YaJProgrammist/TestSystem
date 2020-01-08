@@ -1,10 +1,15 @@
+using BLL.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Ninject;
+using Ninject.Modules;
+using Ninject.Web.Mvc;
+using TestSystem.Infrastructure;
+using TestSystem.Util;
 
 namespace TestSystem
 {
@@ -26,19 +31,24 @@ namespace TestSystem
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddControllers(options =>
+                options.Filters.Add(new HttpResponseExceptionFilter()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            NinjectModule orderModule = new ControllerModule();
+            NinjectModule serviceModule = new ServiceModule("DefaultConnection");
+            var kernel = new StandardKernel(orderModule, serviceModule);
+            DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

@@ -9,6 +9,6 @@ namespace DAL
         public string QuestionText { get; set; }
 
         public Test Test { get; set; }
-        public IEnumerable<Answer> Answers { get; set; }
+        public ICollection<Answer> Answers { get; set; }
     }
 }

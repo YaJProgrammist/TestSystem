@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace BLL.DTO
 {
-    class TeacherDTO
+    public class TeacherDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int TeacherIds { get; set; }
+        public ICollection<int> TestIds { get; set; }
     }
 }

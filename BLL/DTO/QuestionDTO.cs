@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace BLL.DTO
 {
@@ -9,6 +7,6 @@ namespace BLL.DTO
         public int Id { get; set; }
         public string QuestionText { get; set; }
         public int TestId { get; set; }
-        public int[] AnswerIds {get; set; } 
+        public ICollection<int> AnswerIds {get; set; } 
     }
 }

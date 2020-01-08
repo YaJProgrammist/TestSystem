@@ -10,8 +10,9 @@ namespace DAL
         public double MaxMark { get; set; }
         public bool IsOpen { get; set; }
 
-        public IEnumerable<Teacher> Teachers { get; set; }
-        public IEnumerable<Question> Questions { get; set; }
-        public IEnumerable<Answer> Answers { get; set; }
+        public ICollection<Teacher> Teachers { get; set; }
+        public ICollection<Question> Questions { get; set; }
+        public ICollection<Answer> Answers { get; set; }
+        public ICollection<Result> Results { get; set; }
     }
 }

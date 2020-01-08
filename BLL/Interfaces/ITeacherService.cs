@@ -4,13 +4,13 @@ using BLL.DTO;
 
 namespace BLL.Interfaces
 {
-    interface ITeacherService
+    public interface ITeacherService
     {
-        TeacherDTO GetProduct(int? id);
-        IEnumerable<TeacherDTO> GetProducts(Predicate<TeacherDTO> predic);
-        void AddProduct(TeacherDTO testDTO);
-        void UpdateProduct(TeacherDTO testDTO);
-        void DeleteProduct(int? id);
+        TeacherDTO GetTeacher(int? id);
+        IEnumerable<TeacherDTO> GetTeachers(Predicate<TeacherDTO> predic);
+        void AddTeacher(TeacherDTO testDTO);
+        void UpdateTeacher(TeacherDTO testDTO);
+        void DeleteTeacher(int? id);
         void Dispose();
     }
 }
